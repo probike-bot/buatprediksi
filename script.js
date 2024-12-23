@@ -10,18 +10,33 @@ document.getElementById('predictionForm').addEventListener('submit', function (e
 
     function generateUniqueBBFS(digits) {
         const result = [];
-        const chanceOfDuplicate = 0.15;
+        const digitCount = {}; // Melacak jumlah kemunculan setiap digit
+        let hasDuplicate = false; // Melacak apakah sudah ada angka kembar
 
         while (result.length < digits) {
             const randomDigit = Math.floor(Math.random() * 10);
-            if (result.includes(randomDigit)) {
-                if (Math.random() < chanceOfDuplicate) {
-                    result.push(randomDigit);
-                }
-            } else {
-                result.push(randomDigit);
+
+            // Hitung jumlah kemunculan digit
+            digitCount[randomDigit] = (digitCount[randomDigit] || 0);
+
+            // Jika digit sudah ada lebih dari dua kali, lewati
+            if (digitCount[randomDigit] >= 2) {
+                continue;
             }
+
+            // Cegah lebih dari satu angka kembar
+            if (digitCount[randomDigit] === 1) {
+                if (hasDuplicate || Math.random() > 0.15) {
+                    continue;
+                }
+                hasDuplicate = true; // Tandai bahwa angka kembar sudah muncul
+            }
+
+            // Tambahkan digit ke hasil dan perbarui digitCount
+            result.push(randomDigit);
+            digitCount[randomDigit]++;
         }
+
         return result.join('');
     }
 
