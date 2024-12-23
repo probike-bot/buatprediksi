@@ -57,15 +57,16 @@ document.getElementById('predictionForm').addEventListener('submit', function (e
         }
     }
 
-    // Generate 30 line 2D angka
-    const bomLine = [];
+    // Generate unique 2D bom combinations
+    const bomLineSet = new Set();
     for (let i = 0; i < bbfs.length; i++) {
         for (let j = 0; j < bbfs.length; j++) {
-            if (i !== j && bomLine.length < 30) { // Batasi hingga 30 kombinasi
-                bomLine.push(bbfs[i] + bbfs[j]);
+            if (i !== j) {
+                bomLineSet.add(bbfs[i] + bbfs[j]); // Tambahkan kombinasi unik ke Set
             }
         }
     }
+    const bomLine = Array.from(bomLineSet); // Convert Set to array
 
     // Format HTML untuk output di halaman
     const htmlOutput = `
@@ -76,7 +77,7 @@ document.getElementById('predictionForm').addEventListener('submit', function (e
     <li>Colok bebas ${predictionName} : ${colokBebas}</li>
     <li>Dasar : ${dasar}</li>
     <li>Shio : ${shio}</li>
-    <li>Bom line 2d jitu : ${bomLine.join('*')}</li>
+    <li>Bom line 2d jitu (${bomLine.length} kombinasi): ${bomLine.join('*')}</li>
 </ul>
     `.trim();
 
