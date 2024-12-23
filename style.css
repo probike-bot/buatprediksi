@@ -1,0 +1,160 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    color: #333;
+    background: url('https://pintupelangi.me/assets/img/azf/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 20px 10px;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.header-title {
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: #ebebeb;
+    text-shadow: 0 0 10px rgba(255, 255, 0, 0.7);
+}
+
+/* Footer */
+.footer {
+    background: rgba(0, 0, 0, 0.85);
+    text-align: center;
+    padding: 15px;
+    color: #fff;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin-top: 80px;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animasi Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Title */
+.form-title {
+    font-size: 24px;
+    color: #444;
+    margin-bottom: 20px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Field */
+form label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: #444;
+}
+
+form input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+form input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+}
+
+/* Buttons */
+.generate-btn, .btn-reset {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.generate-btn {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.generate-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.btn-reset {
+    background-color: #6c757d;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.btn-reset:hover {
+    background-color: #5a6268;
+    transform: scale(1.05);
+}
+
+/* Output */
+.output {
+    margin-top: 25px;
+    text-align: left;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
