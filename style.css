@@ -13,7 +13,6 @@ body, html {
     background-size: cover;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }
 
 /* Header */
@@ -44,9 +43,10 @@ body, html {
     padding: 15px;
     color: #fff;
     box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
+    margin-top: auto;
 }
 
 /* Container */
@@ -59,8 +59,7 @@ body, html {
     padding: 40px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     text-align: center;
-    margin-top: 80px;
-    position: relative;
+    margin-top: 50px;
     animation: fadeIn 1s ease-in-out;
 }
 
@@ -157,4 +156,31 @@ form input:focus {
     font-size: 16px;
     color: #333;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    line-height: 1.6;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .form-title {
+        font-size: 20px;
+    }
+
+    .generate-btn, .btn-reset {
+        font-size: 14px;
+    }
+
+    form input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .output {
+        font-size: 14px;
+    }
 }
