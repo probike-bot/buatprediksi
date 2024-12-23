@@ -77,7 +77,7 @@ document.getElementById('predictionForm').addEventListener('submit', function (e
     <li>Colok bebas ${predictionName} : ${colokBebas}</li>
     <li>Dasar : ${dasar}</li>
     <li>Shio : ${shio}</li>
-    <li>Bom line 2d jitu (${bomLine.length} kombinasi): ${bomLine.join('*')}</li>
+    <li>Bom line 2d jitu${bomLine.join('*')}</li>
 </ul>
     `.trim();
 
